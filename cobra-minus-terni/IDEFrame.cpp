@@ -1040,6 +1040,12 @@ void IDEFrame::addCodeBodyToIDE(const wxString& p_primaryKeywords, const wxStrin
     Bind(wxEVT_STC_CHARADDED, &IDEFrame::OnCharAdded, this);
 
     codeBody->Bind(wxEVT_KEY_DOWN, &IDEFrame::handleKeyEvent, this);
+    codeBody->Bind(wxEVT_TEXT, &IDEFrame::ScanText, this);
+}
+
+void IDEFrame::ScanText(wxStyledTextEvent& styledTextEvent)
+{
+    wxString textToScanForIndents = codeBody->GetText();
 }
 
 void IDEFrame::addProjectFileTreeToIDE()

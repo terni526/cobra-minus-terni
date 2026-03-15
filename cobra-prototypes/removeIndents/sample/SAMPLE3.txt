@@ -1,4 +1,16 @@
+from abc import ABC, abstractmethod
 
 
-throwaway
+class Interface(ABC):
+    @abstractmethod
+    def interface_method():
+        pass
 
+
+class Interfacer(Interface):
+    def interface_method():
+        print("INTERFACE METHOD RAN")
+
+
+interfacer = Interfacer()
+interfacer.interface_method()

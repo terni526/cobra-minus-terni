@@ -1,6 +1,6 @@
 /*
     * Prototype of auto-indent removal for 0B.6.
-    * SAMPLE3.txt is a temporary sample.
+    * SAMPLE3.txt is no longer a temporary sample.
 */
 
 #include <iostream>
@@ -8,11 +8,13 @@
 
 #include <string>
 
+#include <regex>
+
 const char COLON = ':';
 
 bool runTest = true;
 
-int numberOfSamplesToTest = 2;
+int numberOfSamplesToTest = 3;
 
 int main()
 {
@@ -22,6 +24,8 @@ int main()
 
         std::string samplePath = "sample\\SAMPLE" + std::to_string(sampleNumber) + ".txt";
         std::string outputPath = "output\\OUTPUT" + std::to_string(sampleNumber) + ".txt";
+
+        std::regex multipleIndentsPattern(R"( {4,})");
     
         std::ifstream fileToRemoveIndents(samplePath);
         std::ofstream resultOfIndentRemoval(outputPath);
@@ -37,35 +41,32 @@ int main()
 
         while (std::getline(fileToRemoveIndents, textToRemoveIndents))
         {
-            bool containsTab = textToRemoveIndents.find("    ") != std::string::npos;
+            bool isEmpty = textToRemoveIndents.empty();
 
-            bool isColonLine = textToRemoveIndents.back() == COLON;
+            bool isColonLine =
+                !textToRemoveIndents.empty() &&
+                textToRemoveIndents.back() == COLON;
 
-            bool isEmpty = textToRemoveIndents == "";
-            bool isEnterByte = textToRemoveIndents == "\n";
+            bool hasIndent =
+                textToRemoveIndents.rfind("    ", 0) == 0 ||
+                textToRemoveIndents.rfind("  ", 0) == 0;
 
-            // ? TEST 19                       ::::::::::::::::
-            if (isColonLine && !removingIndents && !isEnterByte)
+            bool hasMultipleIndents = std::regex_search(textToRemoveIndents, multipleIndentsPattern);
+
+            if (isColonLine && !hasMultipleIndents)
             {
                 removingIndents = true;
-                textToRemoveIndents = "";
+                textToRemoveIndents.clear();
             }
-            else if (removingIndents && containsTab)
+            else if (removingIndents && hasIndent)
             {
-                textToRemoveIndents.replace(0, 4, "");
-                // textToRemoveIndents = textToRemoveIndents + "\n";
+                textToRemoveIndents.erase(0, 4);
             }
-
-            // ! isEnterByte will always output false.
-            // ? TEST 21                                                         :::::::::::::::
-            else if (!isColonLine && !containsTab && removingIndents && !isEmpty && !isEnterByte)
+            else if (removingIndents && !hasIndent && !isEmpty)
             {
                 removingIndents = false;
             }
 
-            std::cout << isEnterByte << "\n";  // ? TEST 20
-
-            // ? TEST 21                                ::::::::
             resultOfIndentRemoval << textToRemoveIndents << "\n";
         }
 

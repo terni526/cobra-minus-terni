@@ -1,23 +1,27 @@
-,,Result,,,,,
-Test,Unit,Sample 1,Sample 2,Temporary?,Notes,Time,Commit
-1,Auto-indent removal logic,N/A,Fail,No,All blank lines except the last were removed. No \n after 1st line after colon-line.,03/07/26 06:40 PM,04046d6
-2,Auto-indent removal logic,Fail,N/A,No,Removed blank line,03/07/26 07:21 PM,04046d6
-3,Auto-indent removal logic,Fail,N/A,No,Random indents between comments,03/07/26 07:25 PM,04046d6
-4,Auto-indent removal logic,N/A,Fail,No,Same as test 1,03/07/26 07:26 PM,04046d6
-5,Auto-indent removal logic,Fail,Fail,No,Same as tests 2 and 1,03/07/26 09:46 PM,0a3cb4f
-6,Auto-indent removal logic,Fail,Fail,No,Same as test 5,03/08/26 12:56 PM,400dbc2
-7,Auto-indent removal logic,N/A,N/A,Yes,"All 5 blank lines were all removed, even though there was no colon-line; the file only had 5 blank lines.",03/08/26 01:06 PM,400dbc2
-8,Auto-indent removal logic,N/A,N/A,Yes,"Every blank line was removed, except for the word (throwaway).",03/08/26 01:18 PM,400dbc2
-9,Auto-indent removal logic,Fail,Fail,No,Same as test 5,03/08/26 02:57 PM,400dbc2
-10,Auto-indent removal logic,Fail,Fail,No,Every normal line is separated by tabs.,03/08/26 05:02 PM,d534b21
-11,Auto-indent removal logic,Fail,Fail,No,Same as test 10,03/08/26 07:04 PM,d534b21
-12,Auto-indent removal logic,Fail,Fail,No,Same as test 1,03/08/26 09:15 PM,00f1178
-13,Is line indented logic,Fail,Fail,No,Console shows correlating tab checks,03/09/26 06:34 PM,00f1178
-14,Is line colon-line logic,Fail,Fail,No,Console shows correlating colon-line,03/09/26 06:48 PM,00f1178
-15,Auto-indent removal logic,Fail,Fail,No,Same as tests 3 and 1,03/09/26 06:56 PM,00f1178
-16,Auto-indent removal logic,Fail,Fail,No,"In sample 1, remove indent goes to false when in blank line; sample 2 correlates.",03/10/26 04:21 PM,4264fa5
-17,Auto-indent removal logic,Fail,Fail,No,Same as test 16,03/10/26 05:59 PM,4264fa5
-18,Auto-indent removal logic,Fail,Fail,No,Output 1 is test 2 and output 2 leaves the second colon-line,03/10/26 06:05 PM,4264fa5
-19,Auto-indent removal logic,Fail,Fail,No,Same as test 18,03/12/26 05:41 PM,
-20,Is enter byte boolean,Fail,Fail,No,All false,03/12/26 05:44 PM,
-21,Auto-indent removal logic,Fail,Fail,No,Output 1 has trailing new line and output 2 has an extra new line before main().,03/12/26 05:56 PM,
+,,Result,,,,,,
+Test,Unit,Sample 1,Sample 2,Sample 3,Temporary?,Notes,Time,Commit
+1,Auto-indent removal logic,N/A,Fail,N/A,No,All blank lines except the last were removed. No \n after 1st line after colon-line.,03/07/26 06:40 PM,04046d6
+2,Auto-indent removal logic,Fail,N/A,N/A,No,Removed blank line,03/07/26 07:21 PM,04046d6
+3,Auto-indent removal logic,Fail,N/A,N/A,No,Random indents between comments,03/07/26 07:25 PM,04046d6
+4,Auto-indent removal logic,N/A,Fail,N/A,No,Same as test 1,03/07/26 07:26 PM,04046d6
+5,Auto-indent removal logic,Fail,Fail,N/A,No,Same as tests 2 and 1,03/07/26 09:46 PM,0a3cb4f
+6,Auto-indent removal logic,Fail,Fail,N/A,No,Same as test 5,03/08/26 12:56 PM,400dbc2
+7,Auto-indent removal logic,N/A,N/A,N/A,Yes,"All 5 blank lines were all removed, even though there was no colon-line; the file only had 5 blank lines.",03/08/26 01:06 PM,400dbc2
+8,Auto-indent removal logic,N/A,N/A,N/A,Yes,"Every blank line was removed, except for the word (throwaway).",03/08/26 01:18 PM,400dbc2
+9,Auto-indent removal logic,Fail,Fail,N/A,No,Same as test 5,03/08/26 02:57 PM,400dbc2
+10,Auto-indent removal logic,Fail,Fail,N/A,No,Every normal line is separated by tabs.,03/08/26 05:02 PM,d534b21
+11,Auto-indent removal logic,Fail,Fail,N/A,No,Same as test 10,03/08/26 07:04 PM,d534b21
+12,Auto-indent removal logic,Fail,Fail,N/A,No,Same as test 1,03/08/26 09:15 PM,00f1178
+13,Is line indented logic,Fail,Fail,N/A,No,Console shows correlating tab checks,03/09/26 06:34 PM,00f1178
+14,Is line colon-line logic,Fail,Fail,N/A,No,Console shows correlating colon-line,03/09/26 06:48 PM,00f1178
+15,Auto-indent removal logic,Fail,Fail,N/A,No,Same as tests 3 and 1,03/09/26 06:56 PM,00f1178
+16,Auto-indent removal logic,Fail,Fail,N/A,No,"In sample 1, remove indent goes to false when in blank line; sample 2 correlates.",03/10/26 04:21 PM,4264fa5
+17,Auto-indent removal logic,Fail,Fail,N/A,No,Same as test 16,03/10/26 05:59 PM,4264fa5
+18,Auto-indent removal logic,Fail,Fail,N/A,No,Output 1 is test 2 and output 2 leaves the second colon-line,03/10/26 06:05 PM,4264fa5
+19,Auto-indent removal logic,Fail,Fail,N/A,No,Same as test 18,03/12/26 05:41 PM,259d418
+20,Is enter byte boolean,Fail,Fail,N/A,No,All false,03/12/26 05:44 PM,259d418
+21,Auto-indent removal logic,Fail,Fail,N/A,No,Output 1 has trailing new line and output 2 has an extra new line before main().,03/12/26 05:56 PM,259d418
+22,Auto-indent removal logic,Fail,Fail,N/A,No,Same as test 21,03/14/26 09:13 AM,
+23,Auto-indent removal logic,Fail,Fail,N/A,No,Output 2 removes the second colon-line now,03/14/26 03:52 PM,
+24,Auto-indent removal logic,Fail,Fail,Fail,No,"Output 3: while one layer of indentation is removed, the function definitions in the classes are terminated.",03/14/26 06:37 PM,
+25,Auto-indent removal logic,Pass*,Pass*,Pass*,No,*Solutions for them have changed to allow removed colon-lines to retain the blank line,03/15/26 01:08 PM,
